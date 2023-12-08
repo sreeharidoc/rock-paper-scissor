@@ -1,0 +1,16 @@
+.first-div{
+    display: flex;
+    padding: 15px;
+}
+
+.rock-button{
+    margin: 10px;
+}
+
+.paper-button{
+    margin: 10px;
+}
+
+.scissor-button{
+    margin:10px
+}
