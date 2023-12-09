@@ -1,4 +1,6 @@
 var winner
+let player_points = 0
+let computer_points =0
 function getComputerChoice(){
     const MAX = 3
     const choice = ["rock","paper","scissor"]
@@ -78,17 +80,54 @@ scissorButton.addEventListener("click",function(){
     game()
 })
 
+const resultDiv = document.createElement("div")
+resultDiv.classList.add("result-div")
 
+const result = document.createElement("p")
+result.classList.add("result")
+
+const playerPoints = document.createElement("p")
+playerPoints.classList.add("result")
+
+const computerPoints = document.createElement("p")
+computerPoints.classList.add("result")
+
+const final = document.createElement("p")
+final.classList.add("result")
 
 div.append(rockButton)
 div.append(paperButton)
 div.append(scissorButton)
+resultDiv.append(result)
+resultDiv.append(playerPoints)
+resultDiv.append(computerPoints)
+resultDiv.append(final)
 body.appendChild(div)
+body.appendChild(resultDiv)
 
 
 function game(){
+    final.textContent = ""
     const computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection,computerSelection))
+    champion = playRound(playerSelection,computerSelection)
+    result.textContent = champion
+    if (winner === playerSelection){
+    player_points++
+    }else if (winner === computerSelection){
+    computer_points++
+    }
+    playerPoints.textContent = "Player Points : " + player_points
+    computerPoints.textContent = "Computer Points : " + computer_points
+
+    if (player_points === 5 ){
+        final.textContent = "You Win! Player Points :" + player_points + " Computer Points :" + computer_points
+        player_points = 0 
+        computer_points =0
+    }else if(computer_points === 5){
+        final.textContent = "Computer Wins! Computer Points :" + computer_points + " Player Points :" + player_points
+        player_points = 0 
+        computer_points =0       
+    }
 }
 
 
