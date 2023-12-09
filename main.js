@@ -130,32 +130,3 @@ function game(){
     }
 }
 
-
-
-
-// function game(){
-//     let i = 0;
-//     let player_points = 0
-//     let computer_points = 0
-//     while (i < 5){
-//         let playerSelection = prompt("Enter your choice").toLowerCase();
-//         const computerSelection = getComputerChoice();
-//         console.log(playRound(playerSelection,computerSelection))
-//         if (winner === playerSelection){
-//             player_points++
-//         }else if (winner === computerSelection){
-//             computer_points++
-//         }
-//         i++;
-//     }
-
-//     if (player_points > computer_points){
-//         return "Player Wins! " + "Player Points:" + player_points + " Computer Points:" + computer_points
-//     }else if (computer_points> player_points){
-//         return "Computer Wins " + "Computer Points:" + computer_points + " Player Points:" + player_points
-//     }else{
-//         return "The game ends in a draw " + "Player Points:" + player_points + " Computer Points:" + computer_points
-//     }
-// }
-   
-// console.log(game())
