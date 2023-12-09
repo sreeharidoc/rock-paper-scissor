@@ -6,8 +6,10 @@ function getComputerChoice(){
     return choice[pick]
 }
 
+var playerSelection
 
-function playRound(playerSelection, computerSelection) {
+
+function playRound(playerSelection,computerSelection) {
     // your code here!
     if (playerSelection === "rock"){
         if (computerSelection === "paper"){
@@ -63,22 +65,31 @@ scissorButton.classList.add("scissor-button")
 scissorButton.textContent = "Scissor"
 
 
+rockButton.addEventListener("click", function () {
+    playerSelection = "rock"
+    game()
+}) 
+paperButton.addEventListener("click", function(){
+    playerSelection = "paper"
+    game()
+})
+scissorButton.addEventListener("click",function(){
+    playerSelection = "scissor"
+    game()
+})
+
+
+
 div.append(rockButton)
 div.append(paperButton)
 div.append(scissorButton)
 body.appendChild(div)
 
 
-
-
-
-
-
-
-
-
-
-
+function game(){
+    const computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection,computerSelection))
+}
 
 
 
